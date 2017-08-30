@@ -39,4 +39,56 @@
 
 ## ADAM
 - RMSprop + momentum
-48:03
+- Seems to do really well
+- He makes a version with automatic annealing that looks very nice
+
+## Eve
+- Automatic learning rate annealing + ADAM
+- Ratio of the loss function and the previous loss function
+- Exponential moving average of kiss functions ratios
+- Not many citations (too new?)
+- Can both increase and decrease the learning rate
+- Not sure if this is ready for prime time
+
+## Early Stopping (Aside)
+- It's really hard to find the optimal stopping point
+
+## State Farm Distracted Driver Detection
+- Can do batch normalization on the first layer!
+- Many people training just got the same class over and over again (Learning rate too high)
+- First epoch should have a low learning rate
+- Samples good for checking learning rates
+- Tried every data augmentation (seperately)
+- To figure out regularization, we need to the full dataset, though
+- Don't forget clipping
+- Rule of thumb 0.5 Dropout on the dense layers
+- pre-computed features from ImageNet
+- could save the augmented images
+
+## Pseudo-labelling & Knowledge Distillation
+- Use the structure of the test set to inform your training
+- Train on the predicted features of a weaker model
+- Mentions spearmint: Bayesian hyperparameter optimization
+- WE ARE NOT USING THE VALIDATION LABELS
+- Pseudo-labeling is an iterative process
+- A quarter to a third of the minibatches should be pseudolabels
+- Errors could propagate through
+- Takes advantage of large amounts of unlabeled data
+
+## Collaborative Filtering
+- Who is going to like what?
+- Netflix, Amazon
+- Find out what people like you like
+- MovieLens competition
+- Using pandas crosstab
+- Using gradient descent in Excel (called solver)
+- We also need biases for popular movies and people who rate highly
+- We are calculating "latent factors"
+- How do you look up a user's latent factors from their latent factors
+- Set the missing value losses to 0
+
+## Embedding
+- A type of layer in keras
+- We are no longer using sequential
+- you can do collaborative filtering in Keras!
+- Concatenate the feature embedding
