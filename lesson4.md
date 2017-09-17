@@ -92,3 +92,4 @@
 - We are no longer using sequential
 - you can do collaborative filtering in Keras!
 - Concatenate the feature embedding
+- Simple neural net architecture beats the state-of-the-art!
