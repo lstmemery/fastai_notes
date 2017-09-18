@@ -75,14 +75,52 @@ Visualizations are very important
 - Embeddings are not words. They are vectors
 - We are "learning" these vectors
 - They start randomly
+- Can dropout embeddings
 
-1:07:22
 # Pre-Trained Word Embedding
 
-# Sentiment Analysis
+- Can pass around embeddings (word vectors) instead of networks
+- Glove (Global Vectors for Word Representation)
+- word2vec (from Google) (Good tensorflow info)
+- Sometimes things are cased, sometimes not
+- These embeddings are unsupervised
+	- Try to determine if a sentence with a replaced word is real or not
+- Find the nearest word vector in a different language to translate
+
+- TSNE dimensionality reduction
+- The 2D is a big simplification
+- Exploring the Limits of Language Modeling
+- CNNS with pre-trained word embeddings are state of the art
+
+# Using Glove for Sentiment Analysis
+
+- Always you pre-trained word embeddings
+- Convert IMDb index into glove index
+- Another improvement
 
 # Multi-size CNNs
 
+- Quid uses deep learning with small data
+- Identify marketing phrases
+- **Merge multiple size of convolutions**
+- ANOTHER improvement
+
 # Recurrent Neural Networks
+
+Why we Need RNNs
+  - variable length sequence
+  - long-term dependency
+  - stateful representation
+  - memory
+
+Multiple Object Recognition with Visual Attention
+- Where do I look next?
+
+SwiftKey uses RNNs
+
+Add Word 2 into the second layer etc.
+RNN is aware of state
+Can we do a layer operation on itself? Yes
+All hidden-to-hidden matrices are the same
 
 # RNN Example
