@@ -34,13 +34,45 @@
 - Jeremy hasn't seen any architectures that mix activation functions (except for at the output)
 - Init="identity" hidden-to-hidden transistion
 - Hinton suggests this
+[A Simple Way to Initialize Recurrent Recurrent Networks of Rectified Linear Units](https://arxiv.org/abs/1504.00941)
+- What if the output is also recurrent? Then we could make a sequence of any length
+- We want to learn on every character
+- Long term dependecies are like context
 
-50:55
 ## Sequential RNN
+
+- character_out is shifted input by one
+- Initialize hidden state with 0ss
+- Append the output for each step
+- Now we have multiple losses
+- The first character loss will always be bad (how to predict when there's no information)
+- *Does the RNN learn what the most probable first character is?*
+
+### In Keras
+
+`return_sequences=True`
 
 ## Stateful RNN
 
+- How do we handle long term dependencies?
+- First, we need to stop shuffling the input?
+- Keep the Hidden state as it was before
+in Keras: `stateful=True, shuffle=False`
+- Harder to train (the hidden matrix is being used hundred of thousands of times)
+- Any imbalance in the matrix will destroy the model
+- This is the exploding gradients problem
+- Originally thought to be impossible to train before LSTMs
+- Much harder to parallelize
+- Better loss though
+
 ## Stateful RNN Example
 
+- RNN feeds into an RNN
+- Stacked RNN (Operates consequentively)
+- Makes a more flexible function
+- Dropout is great in an RNN
+- `TimeDistributed` because a normal dense layer is only one dimension
+- When you have `return_sequences`=True, try TimeDistributed
+1:19:16
 ## RNN in Theano
 
