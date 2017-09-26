@@ -73,6 +73,30 @@ in Keras: `stateful=True, shuffle=False`
 - Dropout is great in an RNN
 - `TimeDistributed` because a normal dense layer is only one dimension
 - When you have `return_sequences`=True, try TimeDistributed
-1:19:16
+- Apply Batchnorm to the Embedding layer
+- Genuinely novel phrases
+- Use cases: mobile phone keyboard. Anamoly detection
+
 ## RNN in Theano
 
+- First change the keras model to onehot encoding (this is the first time we did that)
+- `sparse_categorical_crossentropy` acts like an integer is one hot encoded
+- Theano is the language that Keras is written in (or Tensorflow)
+- Theano is much lower level
+- Theano's job: compile a model you describe so that it can run on the GPU
+- shared = this array will be processed by theano
+- No for loops on the GPU (needs to be able to parallelize)
+- Use a scan instead (looks like a stateful map)
+- define a step function
+- We need to take the derivative (T.grad)
+- Create your own loop
+
+- RNNs in images: attentional models (used on really big images)
+- Captioning images
+- Can also be used in 3D models
+- You can make custom Theano layers in Keras
+
+## Tricks
+
+- Hit Shift-tab in Jupyter Notebook
+- Can use pdb in Jupyter
